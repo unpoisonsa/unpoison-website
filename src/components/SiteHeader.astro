@@ -1,0 +1,40 @@
+---
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/';
+const nav = [
+  { href: '/about/', label: 'About' },
+  { href: '/resources/', label: 'Our work' },
+  { href: '/campaigns/pesticide-free-cape-town/', label: 'Pesticide-Free City' },
+  { href: '/report-an-incident/', label: 'Report spraying' },
+];
+
+const active = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class:list={['site-header', { 'site-header-home': isHome }]}>
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="UnPoison home">
+      <span class="brand-name">UnPoison</span>
+      <span class="brand-line">South Africa</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {nav.map((item) => (
+        <a href={item.href} aria-current={active(item.href) ? 'page' : undefined}>{item.label}</a>
+      ))}
+      <a class="nav-donate" href="/donate/">Donate</a>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile navigation">
+        {nav.map((item) => (
+          <a href={item.href} aria-current={active(item.href) ? 'page' : undefined}>{item.label}</a>
+        ))}
+        <a href="/take-action/">Take action</a>
+        <a href="/donate/">Donate</a>
+      </nav>
+    </details>
+  </div>
+</header>

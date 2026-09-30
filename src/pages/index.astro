@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const resources = (await getCollection('resources'))
+  .filter(({ data }) => data.featured)
+  .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title="UnPoison" description="Independent research, advocacy and practical action for safer pesticide policy and a healthy South Africa—for all, forever.">
+  <section class="home-hero">
+    <div class="home-hero-media" aria-hidden="true">
+        <picture>
+          <source srcset="/images/home-canopy-900.webp 900w, /images/home-canopy-1600.webp 1600w" sizes="100vw" type="image/webp" />
+          <img src="/images/home-canopy-1600.webp" width="1600" height="1067" alt="" fetchpriority="high" />
+        </picture>
+    </div>
+    <div class="shell home-hero-inner">
+      <p class="home-strap">For all forever</p>
+      <div class="home-hero-lockup">
+        <h1><span>UnPoison</span><span>South Africa</span></h1>
+        <div>
+          <p class="home-introduction">A civil-society movement working to reform agrichemical policy, strengthen regulation and protect the health of people, food systems and the living world.</p>
+          <a class="home-scroll-link" href="#the-work">Follow the work <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="the-work" class="home-thesis">
+    <div class="shell home-thesis-grid">
+      <p class="section-index">Why reform is needed</p>
+      <div>
+        <h2>South Africa’s pesticide system was built for another era.</h2>
+        <div class="home-thesis-copy">
+          <p>Much of the system still rests on the Fertilizers, Farm Feeds, Agricultural Remedies and Stock Remedies Act 36 of 1947. UnPoison works for a framework that answers to a constitutional democracy—and to present-day evidence about health, water, soil and biodiversity.</p>
+          <a class="line-link" href="/about/">Why reform is needed <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-current">
+    <div class="shell home-current-grid">
+      <div class="home-current-heading">
+        <p class="section-index">Current work</p>
+        <h2>Latest submissions.</h2>
+        <p>Recent submissions and evidence from UnPoison’s ongoing policy work.</p>
+        <a class="line-link" href="/resources/">View the complete resource library <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="home-records">
+          {resources.map(({ id, data }) => (
+            <article class="home-record">
+              <time datetime={data.published.toISOString()}>{data.published.toLocaleDateString('en-ZA', { month: 'long', year: 'numeric' })}</time>
+              <div>
+                <h3><a href={`/resources/${id}/`}>{data.title}</a></h3>
+                <p>{data.summary}</p>
+              </div>
+            </article>
+          ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-campaign">
+    <div class="home-campaign-image" role="img" aria-label="No-spray roadside pilot for pesticide-free roads"></div>
+    <div class="home-campaign-copy">
+      <p class="section-index">Pesticide-Free City</p>
+      <h2>Let’s unpoison our city, one suburb at a time.</h2>
+      <p>Communities across Cape Town are organising to stop routine roadside herbicide spraying and move toward safe, job-creating manual weed control.</p>
+      <a class="line-link line-link-light" href="/campaigns/pesticide-free-cape-town/">Join the Cape Town campaign <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="home-entry-points">
+    <div class="shell">
+      <p class="section-index">Take part</p>
+      <div class="home-entry-grid">
+        <h2>What you can do.</h2>
+        <nav aria-label="Ways to take action">
+          <a href="/resources/"><span>Read the evidence</span><span aria-hidden="true">→</span></a>
+          <a href="/report-an-incident/"><span>Report spraying or poisoning</span><span aria-hidden="true">→</span></a>
+          <a href="/take-action/"><span>Contribute or organise</span><span aria-hidden="true">→</span></a>
+          <a href="/donate/"><span>Fund independent advocacy</span><span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

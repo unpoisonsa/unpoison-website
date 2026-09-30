@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('resources');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { data } = entry;
+---
+
+<BaseLayout title={data.title} description={data.summary}>
+  <header class="page-hero page-hero--document shell" data-pagefind-body>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/resources/">Evidence & resources</a></span><span aria-current="page">{data.type}</span></nav>
+    <p class="eyebrow">{data.type}</p>
+    <h1>{data.title}</h1>
+    <p class="lede">{data.summary}</p>
+  </header>
+
+  <section class="section-compact section-rule">
+    <div class="shell article-grid">
+      <article class="article-body" data-pagefind-body>
+        <Content />
+      </article>
+      <aside class="article-aside" aria-label="Resource details">
+        <p class="eyebrow">Document details</p>
+        <dl>
+          <dt>Published</dt><dd>{data.published.toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' })}</dd>
+          <dt>Author</dt><dd>{data.author}</dd>
+          <dt>Format</dt><dd>{data.fileType}</dd>
+          <dt>Topics</dt><dd>{data.topics.join(', ')}</dd>
+        </dl>
+        <a class="button" href={data.fileUrl}>Open the {data.fileType} <span aria-hidden="true">↗</span></a>
+        <p class="fine-print">The document opens from the existing UnPoison archive while migration is in progress.</p>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

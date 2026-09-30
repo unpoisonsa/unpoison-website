@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResourceRow from '../../components/ResourceRow.astro';
+
+const resources = (await getCollection('resources')).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const types = [...new Set(resources.map(({ data }) => data.type))].sort();
+---
+
+<BaseLayout title="Evidence & resources" description="Search UnPoison's policy submissions, research reports, public databases and practical guides.">
+  <header class="page-hero shell">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-current="page">Evidence & resources</span></nav>
+    <p class="eyebrow">Policy · research · practical guidance</p>
+    <h1>Evidence &amp; resources</h1>
+    <p class="lede">Policy submissions, research, databases and practical guidance—organised so you can find the source, understand its context and act on it.</p>
+  </header>
+
+  <section class="section-compact section-rule" data-pagefind-ignore>
+    <div class="shell">
+      <div class="filters" aria-label="Resource filters">
+        <div class="field">
+          <label for="resource-search">Search titles, summaries and topics</label>
+          <input id="resource-search" type="search" placeholder="For example, biodiversity or Cape Town" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="resource-type">Resource type</label>
+          <select id="resource-type">
+            <option value="">All resource types</option>
+            {types.map((type) => <option value={type}>{type}</option>)}
+          </select>
+        </div>
+        <p id="results-status" class="results-status" aria-live="polite">{resources.length} resources</p>
+      </div>
+
+      <div class="resource-list" data-pagefind-body>
+        {resources.map(({ id, data }) => (
+          <ResourceRow href={`/resources/${id}/`} title={data.title} summary={data.summary} type={data.type} published={data.published} topics={data.topics} fileType={data.fileType} />
+        ))}
+      </div>
+      <p id="no-results" class="callout" hidden>No resources match those filters. Clear the search or choose all resource types.</p>
+    </div>
+  </section>
+
+  <script>
+    const search = document.querySelector<HTMLInputElement>('#resource-search');
+    const type = document.querySelector<HTMLSelectElement>('#resource-type');
+    const status = document.querySelector<HTMLElement>('#results-status');
+    const empty = document.querySelector<HTMLElement>('#no-results');
+    const rows = [...document.querySelectorAll<HTMLElement>('[data-resource]')];
+
+    function filterResources() {
+      const query = search?.value.trim().toLowerCase() ?? '';
+      const selectedType = type?.value ?? '';
+      let shown = 0;
+
+      rows.forEach((row) => {
+        const matchesQuery = !query || row.dataset.search?.includes(query);
+        const matchesType = !selectedType || row.dataset.type === selectedType;
+        row.hidden = !(matchesQuery && matchesType);
+        if (!row.hidden) shown += 1;
+      });
+
+      if (status) status.textContent = `${shown} ${shown === 1 ? 'resource' : 'resources'}`;
+      if (empty) empty.hidden = shown !== 0;
+
+      const url = new URL(window.location.href);
+      query ? url.searchParams.set('q', query) : url.searchParams.delete('q');
+      selectedType ? url.searchParams.set('type', selectedType) : url.searchParams.delete('type');
+      history.replaceState({}, '', url);
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    if (search) search.value = params.get('q') ?? '';
+    if (type) type.value = params.get('type') ?? '';
+    search?.addEventListener('input', filterResources);
+    type?.addEventListener('change', filterResources);
+    filterResources();
+  </script>
+</BaseLayout>

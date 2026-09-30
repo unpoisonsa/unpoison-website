@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  image = '/images/home-canopy-1600.webp',
+} = Astro.props;
+const pageTitle = title === 'UnPoison' ? title : `${title} · UnPoison`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en-ZA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#173f32" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/webp" href="/images/canary-160.webp" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

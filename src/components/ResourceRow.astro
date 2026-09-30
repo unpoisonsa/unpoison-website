@@ -1,0 +1,29 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  type: string;
+  published: Date;
+  topics: string[];
+  fileType?: string;
+}
+
+const { href, title, summary, type, published, topics, fileType = 'PDF' } = Astro.props;
+const date = published.toLocaleDateString('en-ZA', { year: 'numeric', month: 'long' });
+---
+
+<article class="resource-row" data-resource data-type={type} data-search={`${title} ${summary} ${type} ${topics.join(' ')}`.toLowerCase()}>
+  <div class="resource-meta">
+    <span>{type}</span>
+    <time datetime={published.toISOString()}>{date}</time>
+  </div>
+  <div class="resource-copy">
+    <h2><a href={href}>{title}</a></h2>
+    <p>{summary}</p>
+    <ul class="topic-list" aria-label="Topics">
+      {topics.map((topic) => <li>{topic}</li>)}
+    </ul>
+  </div>
+  <span class="file-label" aria-hidden="true">{fileType} <span>↗</span></span>
+</article>
