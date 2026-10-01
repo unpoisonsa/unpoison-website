@@ -31,12 +31,12 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/resources/">Evidence & resources</a></span><span aria-current="page">Videos</span></nav>
     <p class="eyebrow">Watch and listen</p>
     <h1>Videos</h1>
-    <p class="lede">Public talks, explainers and interviews that put the evidence behind UnPoison's work into focus. Choose a video to watch it on YouTube.</p>
+    <p class="lede">Public talks, explainers and interviews that put the evidence behind UnPoison's work into focus. Choose a video to watch it on YouTube in a new tab.</p>
   </header>
 
   <section class="video-feature-band section-rule" aria-labelledby="featured-video-title">
     <div class="shell video-feature">
-      <a class="video-feature-media" href={videoUrl(featured.id)} aria-label={`Watch ${featured.title} on YouTube`}>
+      <a class="video-feature-media" href={videoUrl(featured.id)} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${featured.title} on YouTube (opens in a new tab)`}>
         <img src={stillUrl(featured.id, 'maxresdefault')} width="1280" height="720" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
         <span class="video-play-mark" aria-hidden="true">▶</span>
       </a>
@@ -44,7 +44,7 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
         <p class="eyebrow">Featured explainer</p>
         <h2 id="featured-video-title">{featured.title}</h2>
         <p>{featured.description} Hear how pesticide use in public spaces affects everyday life and what can change.</p>
-        <a class="line-link line-link-light" href={videoUrl(featured.id)}>Watch on YouTube <span aria-hidden="true">↗</span></a>
+        <a class="line-link line-link-light" href={videoUrl(featured.id)} target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
       </div>
     </div>
   </section>
@@ -58,7 +58,7 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
       </div>
       <ul class="video-gallery">
         {explainers.map((video, index) => <li>
-          <a class="video-card" href={videoUrl(video.id)} aria-label={`Watch ${video.title} on YouTube`}>
+          <a class="video-card" href={videoUrl(video.id)} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${video.title} on YouTube (opens in a new tab)`}>
             <span class="video-card-still"><img src={stillUrl(video.id)} width="480" height="360" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="video-card-play" aria-hidden="true">▶</span></span>
             <span class="video-card-copy"><span class="video-card-number">{String(index + 1).padStart(2, '0')} / EXPLAINER</span><strong>{video.title}</strong><span>{video.description}</span></span>
           </a>
@@ -76,7 +76,7 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
       </div>
       <ul class="video-gallery video-gallery--compact">
         {conversations.map((video, index) => <li>
-          <a class="video-card" href={videoUrl(video.id)} aria-label={`Watch ${video.title} on YouTube`}>
+          <a class="video-card" href={videoUrl(video.id)} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${video.title} on YouTube (opens in a new tab)`}>
             <span class="video-card-still"><img src={stillUrl(video.id)} width="480" height="360" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="video-card-play" aria-hidden="true">▶</span></span>
             <span class="video-card-copy"><span class="video-card-number">{String(index + 1).padStart(2, '0')} / CONVERSATION</span><strong>{video.title}</strong></span>
           </a>
