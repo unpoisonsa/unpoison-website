@@ -31,7 +31,7 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/resources/">Evidence & resources</a></span><span aria-current="page">Videos</span></nav>
     <p class="eyebrow">Watch and listen</p>
     <h1>Videos</h1>
-    <p class="lede">Public talks, explainers and interviews that put the evidence behind UnPoison's work into focus. Choose a video to watch it on YouTube in a new tab.</p>
+    <p class="lede">Watch UnPoison explainers, interviews and selected news coverage. Videos open on YouTube in a new tab.</p>
   </header>
 
   <section class="video-feature-band section-rule" aria-labelledby="featured-video-title">
@@ -43,7 +43,7 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
       <div class="video-feature-copy">
         <p class="eyebrow">Featured explainer</p>
         <h2 id="featured-video-title">{featured.title}</h2>
-        <p>{featured.description} Hear how pesticide use in public spaces affects everyday life and what can change.</p>
+        <p>{featured.description}</p>
         <a class="line-link line-link-light" href={videoUrl(featured.id)} target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
       </div>
     </div>
@@ -53,8 +53,8 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
     <div class="shell">
       <div class="video-section-heading">
         <p class="eyebrow">UnPoison explainers</p>
-        <h2>See the connections.</h2>
-        <p>From the field to the city, pesticide decisions affect workers, residents, water, wildlife and food systems. These videos offer an accessible entry point before you explore the underlying <a href="/resources/">evidence and policy work</a>.</p>
+        <h2>Spray drift, wildlife, water and law.</h2>
+        <p>For reports and policy submissions on these issues, see the <a href="/resources/">evidence library</a>.</p>
       </div>
       <ul class="video-gallery">
         {explainers.map((video, index) => <li>
@@ -71,8 +71,7 @@ const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/
     <div class="shell">
       <div class="video-section-heading">
         <p class="eyebrow">Public conversations</p>
-        <h2>Reporting and perspectives.</h2>
-        <p>Interviews, coverage and related talks that help put pesticide exposure and policy reform into a wider public conversation.</p>
+        <h2>Interviews and news coverage.</h2>
       </div>
       <ul class="video-gallery video-gallery--compact">
         {conversations.map((video, index) => <li>

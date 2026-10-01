@@ -9,9 +9,9 @@ const resources = (await getCollection('resources'))
 
 // February 2025 snapshot from UnPoison's HHP database; review before changing the date or figures.
 const pesticideFigures = [
-  { value: '2,688', label: 'registered pesticides in South Africa cited by the 2025 database' },
-  { value: '195', label: 'highly hazardous pesticides legally in use in South Africa, including restricted uses' },
-  { value: '116', label: 'of those legally in use not approved for use in the EU' },
+  { value: '2,688', label: 'pesticides registered in South Africa at the time of the analysis' },
+  { value: '195', label: 'highly hazardous pesticides still legal for use in South Africa' },
+  { value: '116', label: 'of those 195 not approved for use in the EU' },
 ];
 ---
 
@@ -28,7 +28,7 @@ const pesticideFigures = [
       <div class="home-hero-lockup">
         <h1><span>UnPoison</span><span>South Africa</span></h1>
         <div>
-          <p class="home-introduction">A civil-society movement working to reform agrichemical policy, strengthen regulation and protect the health of people, food systems and the living world.</p>
+          <p class="home-introduction">UnPoison works to reduce pesticide harm in South Africa through research, policy reform and community action.</p>
           <a class="home-scroll-link" href="#the-work">Follow the work <span aria-hidden="true">↓</span></a>
         </div>
       </div>
@@ -48,7 +48,7 @@ const pesticideFigures = [
       <div>
         <h2>South Africa’s pesticide system was built for another era.</h2>
         <div class="home-thesis-copy">
-          <p>Much of the system still rests on the Fertilizers, Farm Feeds, Agricultural Remedies and Stock Remedies Act 36 of 1947. UnPoison works for a framework that answers to a constitutional democracy—and to present-day evidence about health, water, soil and biodiversity.</p>
+          <p>South Africa still regulates agricultural remedies under Act 36 of 1947. The law has been amended, but UnPoison is calling for stronger safeguards, better monitoring and clearer public information about pesticide risks.</p>
           <a class="line-link" href="/why-reform/">Why reform is needed <span aria-hidden="true">↗</span></a>
         </div>
       </div>
@@ -58,15 +58,14 @@ const pesticideFigures = [
   <section class="home-figures" aria-labelledby="home-figures-title">
     <div class="shell home-figures-grid">
       <div class="home-figures-intro">
-        <p class="section-index">The evidence · February 2025</p>
-        <h2 id="home-figures-title">The numbers behind the reform call.</h2>
-        <p>UnPoison’s pesticide database makes the scale of the problem visible. These are published findings, not live registry totals.</p>
+        <p class="section-index">February 2025 database</p>
+        <h2 id="home-figures-title">Highly hazardous pesticides remained legal.</h2>
       </div>
       <div>
         <ul class="home-figure-list">
           {pesticideFigures.map((figure) => <li><strong>{figure.value}</strong><span>{figure.label}</span></li>)}
         </ul>
-        <p class="home-figures-source">Source: <a href="/documents/unpoison-hhp-database-2025.pdf">UnPoison’s February 2025 Highly Hazardous Pesticide Database (PDF)</a>. The EU comparison uses “not approved,” not “banned.”</p>
+        <p class="home-figures-source">Source: <a href="/documents/unpoison-hhp-database-2025.pdf">UnPoison’s February 2025 Highly Hazardous Pesticide Database (PDF)</a>.</p>
       </div>
     </div>
   </section>
@@ -76,7 +75,6 @@ const pesticideFigures = [
       <div class="home-current-heading">
         <p class="section-index">Current work</p>
         <h2>Latest submissions.</h2>
-        <p>Recent submissions and evidence from UnPoison’s ongoing policy work.</p>
         <a class="line-link" href="/resources/">Browse current resources <span aria-hidden="true">→</span></a>
       </div>
       <div class="home-records">
@@ -98,7 +96,7 @@ const pesticideFigures = [
     <div class="home-campaign-copy">
       <p class="section-index">Pesticide-Free City</p>
       <h2>Let’s unpoison our city, one suburb at a time.</h2>
-      <p>Communities across Cape Town are organising to stop routine roadside herbicide spraying and move toward safe, job-creating manual weed control.</p>
+      <p>Communities across Cape Town are organising to stop routine roadside herbicide spraying and move toward safer, job-creating manual weed control.</p>
       <a class="line-link line-link-light" href="/campaigns/pesticide-free-cape-town/">Join the Cape Town campaign <span aria-hidden="true">→</span></a>
     </div>
   </section>
