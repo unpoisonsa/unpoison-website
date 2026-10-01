@@ -6,6 +6,13 @@ const resources = (await getCollection('resources'))
   .filter(({ data }) => data.featured)
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf())
   .slice(0, 3);
+
+// February 2025 snapshot from UnPoison's HHP database; review before changing the date or figures.
+const pesticideFigures = [
+  { value: '2,688', label: 'registered pesticides in South Africa cited by the 2025 database' },
+  { value: '195', label: 'highly hazardous pesticides legally in use in South Africa, including restricted uses' },
+  { value: '116', label: 'of those legally in use not approved for use in the EU' },
+];
 ---
 
 <BaseLayout title="UnPoison" description="Independent research, advocacy and practical action for safer pesticide policy and a healthy South Africa—for all, forever.">
@@ -44,6 +51,22 @@ const resources = (await getCollection('resources'))
           <p>Much of the system still rests on the Fertilizers, Farm Feeds, Agricultural Remedies and Stock Remedies Act 36 of 1947. UnPoison works for a framework that answers to a constitutional democracy—and to present-day evidence about health, water, soil and biodiversity.</p>
           <a class="line-link" href="/why-reform/">Why reform is needed <span aria-hidden="true">↗</span></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-figures" aria-labelledby="home-figures-title">
+    <div class="shell home-figures-grid">
+      <div class="home-figures-intro">
+        <p class="section-index">The evidence · February 2025</p>
+        <h2 id="home-figures-title">The numbers behind the reform call.</h2>
+        <p>UnPoison’s pesticide database makes the scale of the problem visible. These are published findings, not live registry totals.</p>
+      </div>
+      <div>
+        <ul class="home-figure-list">
+          {pesticideFigures.map((figure) => <li><strong>{figure.value}</strong><span>{figure.label}</span></li>)}
+        </ul>
+        <p class="home-figures-source">Source: <a href="/documents/unpoison-hhp-database-2025.pdf">UnPoison’s February 2025 Highly Hazardous Pesticide Database (PDF)</a>. The EU comparison uses “not approved,” not “banned.”</p>
       </div>
     </div>
   </section>

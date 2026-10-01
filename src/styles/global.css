@@ -309,6 +309,17 @@
   .home-thesis-copy { display: grid; justify-items: start; gap: var(--space-lg); max-width: 39rem; color: var(--ink-800); }
   .home-thesis-copy p { font-size: var(--text-lg); line-height: 1.65; }
 
+  .home-figures { padding-block: clamp(4rem, 7vw, 6.5rem); border-block: 1px solid var(--paper-200); background: var(--paper-100); }
+  .home-figures-grid { display: grid; gap: var(--space-2xl); }
+  .home-figures-intro { display: grid; align-content: start; gap: var(--space-md); }
+  .home-figures-intro h2 { max-width: 13ch; font-size: clamp(2.1rem, 1.65rem + 2vw, 3.5rem); }
+  .home-figures-intro > p:not(.section-index) { max-width: 44ch; color: var(--ink-800); }
+  .home-figure-list { padding: 0; border-top: 1px solid var(--ink-650); list-style: none; }
+  .home-figure-list li { display: grid; grid-template-columns: minmax(6.5rem, 9rem) minmax(0, 1fr); gap: var(--space-md); align-items: baseline; padding-block: var(--space-lg); border-bottom: 1px solid var(--paper-200); }
+  .home-figure-list strong { font-family: var(--font-display); font-size: clamp(2rem, 1.55rem + 1.6vw, 3rem); font-weight: 520; line-height: 1; font-variant-numeric: lining-nums tabular-nums; letter-spacing: -0.045em; color: var(--green-800); }
+  .home-figure-list span { max-width: 35ch; font-size: clamp(1.06rem, 1rem + 0.3vw, 1.25rem); line-height: 1.4; }
+  .home-figures-source { max-width: 65ch; margin-top: var(--space-md); color: var(--ink-650); font-size: var(--text-sm); }
+
   .home-current { padding-block: clamp(4.5rem, 8vw, 7rem); color: var(--paper-50); background: var(--ink-950); }
   .home-current-grid { display: grid; gap: var(--space-2xl); }
   .home-current .section-index { color: var(--yellow-500); }
@@ -390,6 +401,7 @@
   .home-thesis-grid { grid-template-columns: 8rem minmax(0, 1fr); }
   .home-hero-lockup { grid-template-columns: minmax(0, 1.25fr) minmax(20rem, 0.75fr); gap: var(--space-2xl); }
   .home-thesis-grid > div { grid-template-columns: minmax(0, 1.15fr) minmax(19rem, 0.85fr); align-items: end; }
+  .home-figures-grid { grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr); }
   .home-current-grid { grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr); }
   .home-current-heading { position: sticky; top: 2rem; }
   .home-record { grid-template-columns: 8rem minmax(0, 1fr); }
