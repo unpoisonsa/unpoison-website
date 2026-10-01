@@ -5,7 +5,7 @@ published: 2025-02-21
 author: "UnPoison"
 type: "Database"
 topics: ["Highly hazardous pesticides", "Public database", "Pesticide regulation"]
-fileUrl: "https://unpoison.org/unpoison-sa-hhps-database-jmpm-criteria_ghs_echa_february-2025/"
+fileUrl: "/documents/unpoison-hhp-database-2025.pdf"
 fileType: "PDF"
 featured: true
 ---

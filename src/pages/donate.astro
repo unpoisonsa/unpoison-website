@@ -12,15 +12,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section-compact section-rule">
     <div class="shell article-grid">
       <article class="article-body">
-        <h2>Donation system in transition</h2>
-        <p>We are preserving the current PayFast, EFT and monthly-donation routes while we verify account ownership, recurring-payment behaviour and donor communications.</p>
-        <p>The button opens the current UnPoison donation page. Please confirm that the address begins with <strong>https://unpoison.org/</strong> before entering payment information.</p>
+        <h2>Make a once-off donation</h2>
+        <p>Choose an amount in South African rand. You will continue to PayFast to complete the payment. PayFast handles your payment details.</p>
+        <form class="donation-form" action="https://www.payfast.co.za/eng/process" method="post">
+          <input type="hidden" name="cmd" value="_paynow" />
+          <input type="hidden" name="receiver" value="19983507" />
+          <input type="hidden" name="item_name" value="UnPoison Advocacy" />
+          <label for="donation-amount">Donation amount (ZAR)<input id="donation-amount" type="number" name="amount" min="5" step="0.01" value="100" inputmode="decimal" required /></label>
+          <button class="button" type="submit">Continue to PayFast <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="fine-print">Check that PayFast shows UnPoison as the recipient before paying. Please do not enter card details on this website.</p>
+        <h2>What your support makes possible</h2>
+        <p>Donations help us research pesticide impacts, respond to policy proposals, make public information usable and support community-led alternatives to harmful routine spraying.</p>
       </article>
       <aside class="article-aside">
-        <p class="eyebrow">Existing donation page</p>
-        <h3>Continue to donate</h3>
-        <p>Choose a once-off donation, EFT or monthly support on the existing website.</p>
-        <a class="button" href="https://unpoison.org/monthly-donations/">Open donation options <span aria-hidden="true">↗</span></a>
+        <p class="eyebrow">Other ways to help</p>
+        <h3>Monthly support or EFT</h3>
+        <p>Email us for the current recurring-donation or bank-transfer details. We will send the relevant instructions directly.</p>
+        <a class="button" href="mailto:unpoisonsa@gmail.com?subject=Supporting%20UnPoison">Ask about giving</a>
+        <p class="fine-print">UnPoison is registered as NPO 279-035 and PBO 930082413. For receipt enquiries, email us before donating.</p>
       </aside>
     </div>
   </section>

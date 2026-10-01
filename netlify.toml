@@ -7,6 +7,76 @@
   to = "/campaigns/pesticide-free-cape-town/"
   status = 301
 
+[[redirects]]
+  from = "/our-work/"
+  to = "/resources/"
+  status = 301
+
+[[redirects]]
+  from = "/education-tools/"
+  to = "/resources/"
+  status = 301
+
+[[redirects]]
+  from = "/alternatives/"
+  to = "/resources/"
+  status = 301
+
+[[redirects]]
+  from = "/monthly-donations/"
+  to = "/donate/"
+  status = 301
+
+[[redirects]]
+  from = "/debit-order/"
+  to = "/donate/"
+  status = 301
+
+[[redirects]]
+  from = "/submit-a-story/"
+  to = "/report-an-incident/"
+  status = 301
+
+[[redirects]]
+  from = "/unpoison-sa-hhps-database-jmpm-criteria_ghs_echa_february-2025/"
+  to = "/documents/unpoison-hhp-database-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/08/UnPoison-Comments-on-Biopesticide-Regulatory-Gaps-in-South-Africa-01-May-2026.pdf"
+  to = "/documents/unpoison-biopesticide-regulatory-gaps-2026.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/05/UnPoison-Comment-on-CoCT-26_27-Budget-Request-for-Poison-Free-Weed-Control.pdf"
+  to = "/documents/unpoison-cape-town-budget-comment-2026.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/09/UnPoisons-Comment-on-SAs-Draft-NBSAP-2026-2035.pdf"
+  to = "/documents/unpoison-national-biodiversity-strategy-comment-2026.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/03/UnPoison-Comment-on-Terbufos-Ban-notice.pdf"
+  to = "/documents/unpoison-terbufos-ban-comment-2026.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/02/UnPoison-SA-HHPs-Database-JMPM-criteria_GHS_ECHA_FEBRUARY-2025..pdf"
+  to = "/documents/unpoison-hhp-database-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/10/CoCT-Herbicide-Spraying-Info.pdf"
+  to = "/documents/cape-town-herbicide-spraying-information.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/10/Is-this-herbicide-spraying-legal-1.pdf"
+  to = "/documents/is-this-herbicide-spraying-legal.pdf"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -14,3 +84,28 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/brand/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

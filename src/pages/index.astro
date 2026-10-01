@@ -28,6 +28,13 @@ const resources = (await getCollection('resources'))
     </div>
   </section>
 
+  <aside class="identity-band" aria-label="UnPoison registration">
+    <div class="shell identity-band-inner">
+      <p><strong>UnPoison is a registered South African nonprofit.</strong> NPO 279-035 · PBO 930082413. We publish evidence and organise practical action for safer pesticide policy.</p>
+      <a class="text-link" href="/about/">About the organisation</a>
+    </div>
+  </aside>
+
   <section id="the-work" class="home-thesis">
     <div class="shell home-thesis-grid">
       <p class="section-index">Why reform is needed</p>
@@ -47,7 +54,7 @@ const resources = (await getCollection('resources'))
         <p class="section-index">Current work</p>
         <h2>Latest submissions.</h2>
         <p>Recent submissions and evidence from UnPoison’s ongoing policy work.</p>
-        <a class="line-link" href="/resources/">View the complete resource library <span aria-hidden="true">→</span></a>
+        <a class="line-link" href="/resources/">Browse current resources <span aria-hidden="true">→</span></a>
       </div>
       <div class="home-records">
           {resources.map(({ id, data }) => (

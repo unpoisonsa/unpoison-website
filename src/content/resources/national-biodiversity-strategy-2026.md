@@ -5,7 +5,7 @@ published: 2026-09-09
 author: "UnPoison"
 type: "Policy comment"
 topics: ["Biodiversity", "Policy reform", "Highly hazardous pesticides"]
-fileUrl: "https://unpoison.org/wp-content/uploads/2026/09/UnPoisons-Comment-on-SAs-Draft-NBSAP-2026-2035.pdf"
+fileUrl: "/documents/unpoison-national-biodiversity-strategy-comment-2026.pdf"
 fileType: "PDF"
 featured: true
 ---
@@ -18,5 +18,3 @@ This submission responds to South Africa's draft National Biodiversity Strategy 
 - A phase-out of highly hazardous pesticides.
 - Non-chemical-first pest management across public and private sectors.
 - Stronger monitoring and accountability for wastewater, contaminants of emerging concern, wildlife poisoning and biodiversity impacts.
-
-The original document remains hosted on the current UnPoison website while the full document archive is being migrated.

@@ -16,6 +16,22 @@ const {
 } = Astro.props;
 const pageTitle = title === 'UnPoison' ? title : `${title} · UnPoison`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const indexable = Astro.site?.hostname === 'unpoison.org';
+const organisation = {
+  '@context': 'https://schema.org',
+  '@type': 'NGO',
+  name: 'UnPoison',
+  legalName: 'UnPoison',
+  url: new URL('/', Astro.site).href,
+  logo: new URL('/brand/unpoison-canary-mark-512.png', Astro.site).href,
+  email: 'unpoisonsa@gmail.com',
+  areaServed: 'South Africa',
+  identifier: [
+    { '@type': 'PropertyValue', name: 'South African NPO registration', value: '279-035' },
+    { '@type': 'PropertyValue', name: 'South African PBO number', value: '930082413' },
+  ],
+};
 ---
 
 <!doctype html>
@@ -25,12 +41,19 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#173f32" />
+    {!indexable && <meta name="robots" content="noindex, nofollow, noarchive" />}
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/webp" href="/images/canary-160.webp" />
+    <link rel="icon" type="image/png" href="/brand/unpoison-canary-mark-128.png" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="UnPoison: for all forever" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="UnPoison" />
+    <meta property="og:locale" content="en_ZA" />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(organisation)} />
     <title>{pageTitle}</title>
   </head>
   <body>

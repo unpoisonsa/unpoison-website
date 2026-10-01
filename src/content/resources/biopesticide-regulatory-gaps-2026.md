@@ -5,7 +5,7 @@ published: 2026-05-01
 author: "UnPoison"
 type: "Policy comment"
 topics: ["Biopesticides", "Policy reform", "Safer alternatives"]
-fileUrl: "https://unpoison.org/wp-content/uploads/2026/08/UnPoison-Comments-on-Biopesticide-Regulatory-Gaps-in-South-Africa-01-May-2026.pdf"
+fileUrl: "/documents/unpoison-biopesticide-regulatory-gaps-2026.pdf"
 fileType: "PDF"
 featured: true
 ---

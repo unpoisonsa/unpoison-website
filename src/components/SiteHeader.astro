@@ -3,9 +3,10 @@ const currentPath = Astro.url.pathname;
 const isHome = currentPath === '/';
 const nav = [
   { href: '/about/', label: 'About' },
-  { href: '/resources/', label: 'Our work' },
-  { href: '/campaigns/pesticide-free-cape-town/', label: 'Pesticide-Free City' },
-  { href: '/report-an-incident/', label: 'Report spraying' },
+  { href: '/resources/', label: 'Evidence & resources' },
+  { href: '/campaigns/pesticide-free-cape-town/', label: 'Cape Town campaign' },
+  { href: '/take-action/', label: 'Take action' },
+  { href: '/contact/', label: 'Contact' },
 ];
 
 const active = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
@@ -15,8 +16,8 @@ const active = (href: string) => href === '/' ? currentPath === '/' : currentPat
 <header class:list={['site-header', { 'site-header-home': isHome }]}>
   <div class="shell header-inner">
     <a class="brand" href="/" aria-label="UnPoison home">
-      <span class="brand-name">UnPoison</span>
-      <span class="brand-line">South Africa</span>
+      <img class="brand-mark" src="/brand/unpoison-canary-mark-128.png" width="48" height="48" alt="" />
+      <span class="brand-type"><span class="brand-name">UnPoison</span><span class="brand-line">South Africa</span></span>
     </a>
 
     <nav class="desktop-nav" aria-label="Primary navigation">
@@ -32,7 +33,6 @@ const active = (href: string) => href === '/' ? currentPath === '/' : currentPat
         {nav.map((item) => (
           <a href={item.href} aria-current={active(item.href) ? 'page' : undefined}>{item.label}</a>
         ))}
-        <a href="/take-action/">Take action</a>
         <a href="/donate/">Donate</a>
       </nav>
     </details>

@@ -5,7 +5,7 @@ published: 2026-02-28
 author: "UnPoison"
 type: "Policy comment"
 topics: ["Terbufos", "Food safety", "Enforcement"]
-fileUrl: "https://unpoison.org/wp-content/uploads/2026/03/UnPoison-Comment-on-Terbufos-Ban-notice.pdf"
+fileUrl: "/documents/unpoison-terbufos-ban-comment-2026.pdf"
 fileType: "PDF"
 featured: false
 ---

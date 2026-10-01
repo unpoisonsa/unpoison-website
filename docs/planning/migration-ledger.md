@@ -4,6 +4,8 @@ Snapshot date: 2026-09-29
 Source: public WordPress REST API and rendered public page content  
 Machine-editable ledger: [`migration-ledger.csv`](./migration-ledger.csv)
 
+Phase-one update, 2026-10-01: the candidate site now has a Contact page, 14 direct YouTube links on `/videos/`, and seven locally hosted public PDFs. This does **not** close the full content-parity ledger: video metadata/embeds, 37 other document records, the Animals page, media archive, partner review, and WordPress-only form/SEO state still need work. See [`phase-one-launch.md`](./phase-one-launch.md) for the interim cutover gate.
+
 ## Purpose
 
 This is the working content-parity ledger for the WordPress-to-Astro migration. Every discovered public item must end in one of these states before cutover:
@@ -21,11 +23,11 @@ The public WordPress site remains the source of truth until every P0/P1 row has 
 
 | Kind | Rows | Present in prototype now | Main gap |
 | --- | ---: | ---: | --- |
-| WordPress pages | 14 | 5 partially represented | Animals, Contact and substantial sections of Home/Pesticide-Free City are absent. |
+| WordPress pages | 14 | Phase-one routes and Contact represented | Animals and substantial sections of Home/Pesticide-Free City still need parity review. |
 | WordPress posts | 1 | 0 | Spray-drift article and its relationship to the report are absent. |
-| Documents | 44 | 5 represented as resource records | 39 document records still need migration/review. |
+| Documents | 44 | 5 resource records; 7 PDFs copied locally | 39 document records still need migration/review. |
 | Images | 170 | 4 source images copied | 166 images need usage, rights, duplicate and quality review. |
-| YouTube videos | 14 | 0 | No video content type or click-to-load player exists yet. |
+| YouTube videos | 14 | 14 direct links | Metadata/typed records and click-to-load players remain phase-two work. |
 | Media coverage links | 26 | 0 | The “UnPoison in the Media” archive is absent. |
 | Partner/supporter references | 41 | 0 | Members/supporters are absent and every relationship needs verification. |
 | External forms | 3 | 1 campaign handoff represented | Campaign poll/champion destinations require verification. |
@@ -53,7 +55,7 @@ The CSV contains **367 trackable rows**. It is deliberately more granular than t
 | `/poison-free-city/` | Migrate full campaign and redirect | `/campaigns/pesticide-free-cape-town/` | P0 | Partial |
 | `/submit-a-story/` | Preserve bridge, then replace safely | `/report-an-incident/` | P0 | Blocked on workflow/privacy decisions |
 | `/monthly-donations/` | Preserve bridge, then consolidate | `/donate/` | P0 | Blocked on payment verification |
-| `/contact/` | Migrate | `/contact/` | P0 | Not started |
+| `/contact/` | Migrate | `/contact/` | P0 | Phase-one email route built; recipient confirmation pending |
 | `/animals/` | Migrate and restructure | `/animals/` | P1 | Not started |
 | `/debit-order/` | Verify, then consolidate or retire | `/donate/` | P1 | Blocked on ThrivePay access |
 | `/stories/` | Review and archive/migrate approved stories | `/stories/` | P2 | Not started |

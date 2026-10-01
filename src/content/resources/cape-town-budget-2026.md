@@ -5,7 +5,7 @@ published: 2026-05-01
 author: "UnPoison"
 type: "Policy comment"
 topics: ["Cape Town", "Municipal spraying", "Green jobs"]
-fileUrl: "https://unpoison.org/wp-content/uploads/2026/05/UnPoison-Comment-on-CoCT-26_27-Budget-Request-for-Poison-Free-Weed-Control.pdf"
+fileUrl: "/documents/unpoison-cape-town-budget-comment-2026.pdf"
 fileType: "PDF"
 featured: true
 ---

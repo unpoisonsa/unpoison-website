@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const explainers = [
+  { title: 'UnPoison Our Wine — Transition Roadmap for South African Wine Farmers', id: '58gekrMt7Jw', description: 'A roadmap for reducing dependence on harmful agrichemicals in South African wine farming.' },
+  { title: 'UnPoison Our Air — Agrichemical Spray Drift in South Africa', id: 'yxWBprX6KmM', description: 'Why spray drift matters for people and places beyond the treated field.' },
+  { title: 'UnPoison Our Owls & Raptors', id: 'S5eLo2fjfbk', description: 'The effects of poison on birds of prey and the wider living system.' },
+  { title: 'UnPoison Our Water', id: 'cSD7rlCKRqM', description: 'Pesticides, water and the need to protect shared resources.' },
+  { title: 'UnPoison Our Legislation', id: 'ckDX2MCAilA', description: 'Why South Africa’s agrichemical rules need reform.' },
+  { title: 'Demystifying Highly Hazardous Pesticides in South Africa', id: '_C6aRP98-Ew', description: 'An introduction to highly hazardous pesticides in the South African context.' },
+  { title: 'UnPoison Our City', id: 'qc1jjcGwESE', description: 'A community case for moving away from routine urban spraying.' },
+];
+
+const conversations = [
+  { title: 'Calls for banning toxic pesticides — Anna Shevel weighs in', id: 'SzbsNBPVyUw' },
+  { title: 'Chemical Alert — Carte Blanche', id: 'Z79S9Ff-Qz8' },
+  { title: 'Dangers and use of organophosphate', id: 'c1KjiM0Ujio' },
+  { title: 'How one scientist took on the chemical industry', id: 'ezVEzCmiXM4' },
+  { title: 'Pesticides: An Expensive Business', id: 'jW-bGsN_4Pk' },
+  { title: 'Calls for a pesticide ban in schools — Anna Shevel shares thoughts', id: 'm7AIwFStAQg' },
+  { title: 'Women on Farms — Pesticide Exposure of Women Farmworkers', id: 'ynwY2C5ikFY' },
+];
+---
+
+<BaseLayout title="Videos" description="Watch UnPoison explainers and selected public conversations about pesticides, policy, health and practical alternatives.">
+  <header class="page-hero shell">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/resources/">Evidence & resources</a></span><span aria-current="page">Videos</span></nav>
+    <p class="eyebrow">Watch and listen</p>
+    <h1>Videos</h1>
+    <p class="lede">UnPoison's public talks and explainers bring the issues behind our written submissions into focus. These links open on YouTube; no video player loads on this page.</p>
+  </header>
+
+  <section class="section-compact section-rule">
+    <div class="shell split split-top">
+      <div class="split-copy article-body">
+        <p class="eyebrow">UnPoison explainers</p>
+        <h2>See the connections.</h2>
+        <p>From the field to the city, pesticide decisions affect workers, residents, water, wildlife and food systems. These videos offer an accessible entry point before you explore the underlying <a href="/resources/">evidence and policy work</a>.</p>
+      </div>
+      <div>
+        <ul class="video-list">
+          {explainers.map((video) => <li><a href={`https://www.youtube.com/watch?v=${video.id}`}>{video.title}<span aria-hidden="true">↗</span></a><p>{video.description}</p></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-compact section-rule">
+    <div class="shell split split-top">
+      <div class="split-copy article-body">
+        <p class="eyebrow">Public conversations</p>
+        <h2>Reporting and perspectives.</h2>
+        <p>Interviews, coverage and related talks that help put pesticide exposure and policy reform into a wider public conversation.</p>
+      </div>
+      <div>
+        <ul class="video-list">
+          {conversations.map((video) => <li><a href={`https://www.youtube.com/watch?v=${video.id}`}>{video.title}<span aria-hidden="true">↗</span></a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

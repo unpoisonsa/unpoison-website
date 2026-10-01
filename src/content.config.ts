@@ -12,7 +12,7 @@ const resources = defineCollection({
     author: z.string().default('UnPoison'),
     type: z.enum(['Policy comment', 'Research report', 'Database', 'Media release', 'Practical guide']),
     topics: z.array(z.string()),
-    fileUrl: z.url(),
+    fileUrl: z.union([z.url(), z.string().startsWith('/')]),
     fileType: z.string().default('PDF'),
     featured: z.boolean().default(false),
   }),
