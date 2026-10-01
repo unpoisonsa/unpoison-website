@@ -8,8 +8,9 @@ const explainers = [
   { title: 'UnPoison Our Water', id: 'cSD7rlCKRqM', description: 'Pesticides, water and the need to protect shared resources.' },
   { title: 'UnPoison Our Legislation', id: 'ckDX2MCAilA', description: 'Why South Africa’s agrichemical rules need reform.' },
   { title: 'Demystifying Highly Hazardous Pesticides in South Africa', id: '_C6aRP98-Ew', description: 'An introduction to highly hazardous pesticides in the South African context.' },
-  { title: 'UnPoison Our City', id: 'qc1jjcGwESE', description: 'A community case for moving away from routine urban spraying.' },
 ];
+
+const featured = { title: 'UnPoison Our City', id: 'qc1jjcGwESE', description: 'A community case for moving away from routine urban spraying.' };
 
 const conversations = [
   { title: 'Calls for banning toxic pesticides — Anna Shevel weighs in', id: 'SzbsNBPVyUw' },
@@ -20,6 +21,9 @@ const conversations = [
   { title: 'Calls for a pesticide ban in schools — Anna Shevel shares thoughts', id: 'm7AIwFStAQg' },
   { title: 'Women on Farms — Pesticide Exposure of Women Farmworkers', id: 'ynwY2C5ikFY' },
 ];
+
+const videoUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
+const stillUrl = (id: string, quality = 'hqdefault') => `https://i.ytimg.com/vi/${id}/${quality}.jpg`;
 ---
 
 <BaseLayout title="Videos" description="Watch UnPoison explainers and selected public conversations about pesticides, policy, health and practical alternatives.">
@@ -27,36 +31,57 @@ const conversations = [
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span><a href="/resources/">Evidence & resources</a></span><span aria-current="page">Videos</span></nav>
     <p class="eyebrow">Watch and listen</p>
     <h1>Videos</h1>
-    <p class="lede">UnPoison's public talks and explainers bring the issues behind our written submissions into focus. These links open on YouTube; no video player loads on this page.</p>
+    <p class="lede">Public talks, explainers and interviews that put the evidence behind UnPoison's work into focus. Choose a video to watch it on YouTube.</p>
   </header>
 
-  <section class="section-compact section-rule">
-    <div class="shell split split-top">
-      <div class="split-copy article-body">
-        <p class="eyebrow">UnPoison explainers</p>
-        <h2>See the connections.</h2>
-        <p>From the field to the city, pesticide decisions affect workers, residents, water, wildlife and food systems. These videos offer an accessible entry point before you explore the underlying <a href="/resources/">evidence and policy work</a>.</p>
-      </div>
-      <div>
-        <ul class="video-list">
-          {explainers.map((video) => <li><a href={`https://www.youtube.com/watch?v=${video.id}`}>{video.title}<span aria-hidden="true">↗</span></a><p>{video.description}</p></li>)}
-        </ul>
+  <section class="video-feature-band section-rule" aria-labelledby="featured-video-title">
+    <div class="shell video-feature">
+      <a class="video-feature-media" href={videoUrl(featured.id)} aria-label={`Watch ${featured.title} on YouTube`}>
+        <img src={stillUrl(featured.id, 'maxresdefault')} width="1280" height="720" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        <span class="video-play-mark" aria-hidden="true">▶</span>
+      </a>
+      <div class="video-feature-copy">
+        <p class="eyebrow">Featured explainer</p>
+        <h2 id="featured-video-title">{featured.title}</h2>
+        <p>{featured.description} Hear how pesticide use in public spaces affects everyday life and what can change.</p>
+        <a class="line-link line-link-light" href={videoUrl(featured.id)}>Watch on YouTube <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
 
   <section class="section-compact section-rule">
-    <div class="shell split split-top">
-      <div class="split-copy article-body">
+    <div class="shell">
+      <div class="video-section-heading">
+        <p class="eyebrow">UnPoison explainers</p>
+        <h2>See the connections.</h2>
+        <p>From the field to the city, pesticide decisions affect workers, residents, water, wildlife and food systems. These videos offer an accessible entry point before you explore the underlying <a href="/resources/">evidence and policy work</a>.</p>
+      </div>
+      <ul class="video-gallery">
+        {explainers.map((video, index) => <li>
+          <a class="video-card" href={videoUrl(video.id)} aria-label={`Watch ${video.title} on YouTube`}>
+            <span class="video-card-still"><img src={stillUrl(video.id)} width="480" height="360" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="video-card-play" aria-hidden="true">▶</span></span>
+            <span class="video-card-copy"><span class="video-card-number">{String(index + 1).padStart(2, '0')} / EXPLAINER</span><strong>{video.title}</strong><span>{video.description}</span></span>
+          </a>
+        </li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-compact section-rule">
+    <div class="shell">
+      <div class="video-section-heading">
         <p class="eyebrow">Public conversations</p>
         <h2>Reporting and perspectives.</h2>
         <p>Interviews, coverage and related talks that help put pesticide exposure and policy reform into a wider public conversation.</p>
       </div>
-      <div>
-        <ul class="video-list">
-          {conversations.map((video) => <li><a href={`https://www.youtube.com/watch?v=${video.id}`}>{video.title}<span aria-hidden="true">↗</span></a></li>)}
-        </ul>
-      </div>
+      <ul class="video-gallery video-gallery--compact">
+        {conversations.map((video, index) => <li>
+          <a class="video-card" href={videoUrl(video.id)} aria-label={`Watch ${video.title} on YouTube`}>
+            <span class="video-card-still"><img src={stillUrl(video.id)} width="480" height="360" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /><span class="video-card-play" aria-hidden="true">▶</span></span>
+            <span class="video-card-copy"><span class="video-card-number">{String(index + 1).padStart(2, '0')} / CONVERSATION</span><strong>{video.title}</strong></span>
+          </a>
+        </li>)}
+      </ul>
     </div>
   </section>
 </BaseLayout>

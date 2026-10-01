@@ -4,7 +4,7 @@ Snapshot date: 2026-09-29
 Source: public WordPress REST API and rendered public page content  
 Machine-editable ledger: [`migration-ledger.csv`](./migration-ledger.csv)
 
-Phase-one update, 2026-10-01: the candidate site now has a Contact page, 14 direct YouTube links on `/videos/`, and seven locally hosted public PDFs. This does **not** close the full content-parity ledger: video metadata/embeds, 37 other document records, the Animals page, media archive, partner review, and WordPress-only form/SEO state still need work. See [`phase-one-launch.md`](./phase-one-launch.md) for the interim cutover gate.
+Phase-one update, 2026-10-01: the candidate site now has a Contact page, 14 direct YouTube links with lazy-loaded YouTube preview images on `/videos/`, and seven locally hosted public PDFs. The preview images are not copied into the repository and are disclosed on the Privacy page. This does **not** close the full content-parity ledger: video metadata/embeds, 37 other document records, the Animals page, media archive, partner review, and WordPress-only form/SEO state still need work. See [`phase-one-launch.md`](./phase-one-launch.md) for the interim cutover gate.
 
 ## Purpose
 
@@ -27,7 +27,7 @@ The public WordPress site remains the source of truth until every P0/P1 row has 
 | WordPress posts | 1 | 0 | Spray-drift article and its relationship to the report are absent. |
 | Documents | 44 | 5 resource records; 7 PDFs copied locally | 39 document records still need migration/review. |
 | Images | 170 | 4 source images copied | 166 images need usage, rights, duplicate and quality review. |
-| YouTube videos | 14 | 14 direct links | Metadata/typed records and click-to-load players remain phase-two work. |
+| YouTube videos | 14 | 14 direct links with preview stills | Metadata/typed records and click-to-load players remain phase-two work. |
 | Media coverage links | 26 | 0 | The “UnPoison in the Media” archive is absent. |
 | Partner/supporter references | 41 | 0 | Members/supporters are absent and every relationship needs verification. |
 | External forms | 3 | 1 campaign handoff represented | Campaign poll/champion destinations require verification. |
