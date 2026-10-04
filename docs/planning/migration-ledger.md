@@ -6,6 +6,8 @@ Machine-editable ledger: [`migration-ledger.csv`](./migration-ledger.csv)
 
 Phase-one update, 2026-10-01: the candidate site now has a Contact page, 14 direct YouTube links with lazy-loaded YouTube preview images on `/videos/`, and seven locally hosted public PDFs. The preview images are not copied into the repository and are disclosed on the Privacy page. This does **not** close the full content-parity ledger: video metadata/embeds, 37 other document records, the Animals page, media archive, partner review, and WordPress-only form/SEO state still need work. See [`phase-one-launch.md`](./phase-one-launch.md) for the interim cutover gate.
 
+Credibility update, 2026-10-04: the homepage now links to a curated `/media/` listing of five publisher-verified pieces and a `/supporters/` selection of 12 organisations carried over from the WordPress homepage. The EWN item is labelled as UnPoison-authored commentary. Current supporter status and permission to imply endorsement have **not** been verified; the public page says so. The remaining media and supporter records are still open in the ledger.
+
 ## Purpose
 
 This is the working content-parity ledger for the WordPress-to-Astro migration. Every discovered public item must end in one of these states before cutover:
@@ -28,8 +30,8 @@ The public WordPress site remains the source of truth until every P0/P1 row has 
 | Documents | 44 | 5 resource records; 7 PDFs copied locally | 39 document records still need migration/review. |
 | Images | 170 | 4 source images copied | 166 images need usage, rights, duplicate and quality review. |
 | YouTube videos | 14 | 14 direct links with preview stills | Metadata/typed records and click-to-load players remain phase-two work. |
-| Media coverage links | 26 | 0 | The “UnPoison in the Media” archive is absent. |
-| Partner/supporter references | 41 | 0 | Members/supporters are absent and every relationship needs verification. |
+| Media coverage links | 26 | 5 curated items | Remaining links need title, relevance and destination review. |
+| Partner/supporter references | 41 | 12 homepage organisations named | Current relationships, remaining names and permissions need verification. |
 | External forms | 3 | 1 campaign handoff represented | Campaign poll/champion destinations require verification. |
 | External documents | 7 | 3 campaign links represented | Third-party source documents need stable titles and link checks. |
 | Internal references requiring review | 29 | — | Attachment pages, legacy aliases and other routes need redirect decisions. |

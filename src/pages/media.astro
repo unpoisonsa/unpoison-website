@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { mediaCoverage } from '../data/credibility';
+---
+
+<BaseLayout title="UnPoison in the media" description="Selected reporting and commentary about UnPoison’s pesticide reform and community work in South Africa.">
+  <header class="page-hero shell">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-current="page">In the media</span></nav>
+    <p class="eyebrow">Reporting & commentary</p>
+    <h1>UnPoison in the media</h1>
+    <p class="lede">A selection of reporting that quotes or covers our work, alongside commentary we have written. Each link opens at the publisher’s site.</p>
+  </header>
+
+  <section class="section-compact section-rule">
+    <div class="shell press-layout">
+      <div class="press-intro">
+        <p class="eyebrow">Selected coverage</p>
+        <p>These links come from the media archive on our previous website. They are listed by publication date; the publisher retains the original article or recording.</p>
+      </div>
+      <ol class="press-list">
+        {mediaCoverage.map((item) => (
+          <li>
+            <div class="press-meta"><span>{item.outlet}</span><span>{item.date}</span></div>
+            <div class="press-copy"><h2><a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}<span class="external-arrow" aria-hidden="true">↗</span></a></h2><p>{item.context}</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

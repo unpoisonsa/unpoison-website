@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { listedSupporters } from '../data/credibility';
+---
+
+<BaseLayout title="Members and supporters" description="Organisations listed in the members and supporters section of UnPoison’s previous website.">
+  <header class="page-hero shell">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-current="page">Members & supporters</span></nav>
+    <p class="eyebrow">People and organisations</p>
+    <h1>Members & supporters</h1>
+    <p class="lede">UnPoison’s work has drawn on relationships across public health, food systems, environmental justice and community action.</p>
+  </header>
+
+  <section class="section-compact section-rule">
+    <div class="shell supporters-layout">
+      <div class="supporters-intro">
+        <p class="eyebrow">From our previous website</p>
+        <h2>Organisations listed by UnPoison</h2>
+        <p>This selection appeared in the “Members & Supporters” section of our previous website. We are checking current affiliations before publishing a complete roster or describing any organisation as a current endorser.</p>
+        <a class="line-link" href="/contact/">Ask about working with us <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="supporter-list">
+        {listedSupporters.map((item) => (
+          <li><a href={item.href} target="_blank" rel="noopener noreferrer"><span>{item.name}</span><span class="external-arrow" aria-hidden="true">↗</span></a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { listedSupporters, mediaCoverage } from '../data/credibility';
 
 const resources = (await getCollection('resources'))
   .filter(({ data }) => data.featured)
@@ -98,6 +99,32 @@ const pesticideFigures = [
       <h2>Let’s unpoison our city, one suburb at a time.</h2>
       <p>Communities across Cape Town are organising to stop routine roadside herbicide spraying and move toward safer, job-creating manual weed control.</p>
       <a class="line-link line-link-light" href="/campaigns/pesticide-free-cape-town/">Join the Cape Town campaign <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="home-credibility" aria-labelledby="home-credibility-title">
+    <div class="shell">
+      <div class="home-credibility-heading">
+        <p class="section-index">Public record & connections</p>
+        <h2 id="home-credibility-title">The work, in public.</h2>
+      </div>
+      <div class="home-credibility-grid">
+        <div class="home-credibility-column">
+          <div class="home-credibility-column-head"><h3>In the media</h3><a class="line-link" href="/media/">See selected coverage <span aria-hidden="true">→</span></a></div>
+          <ol class="home-media-list">
+            {mediaCoverage.slice(0, 3).map((item) => (
+              <li><span>{item.outlet} · {item.date}</span><a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}<span aria-hidden="true">↗</span></a></li>
+            ))}
+          </ol>
+        </div>
+        <div class="home-credibility-column">
+          <div class="home-credibility-column-head"><h3>Members & supporters</h3><a class="line-link" href="/supporters/">See the list <span aria-hidden="true">→</span></a></div>
+          <p class="home-supporter-note">Organisations named on our previous website. Current affiliations are being checked.</p>
+          <ul class="home-supporter-list">
+            {listedSupporters.slice(0, 8).map((item) => <li><a href={item.href} target="_blank" rel="noopener noreferrer">{item.name}<span aria-hidden="true">↗</span></a></li>)}
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
