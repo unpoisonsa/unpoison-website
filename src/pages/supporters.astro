@@ -21,7 +21,7 @@ import { listedSupporters } from '../data/credibility';
       </div>
       <ul class="supporter-list">
         {listedSupporters.map((item) => (
-          <li><a href={item.href} target="_blank" rel="noopener noreferrer"><span>{item.name}</span><span class="external-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href={item.href} target="_blank" rel="noopener noreferrer"><img src={item.logo} width="180" height="100" alt="" loading="lazy" decoding="async" /><span>{item.name}</span><span class="external-arrow" aria-hidden="true">↗</span></a></li>
         ))}
       </ul>
     </div>

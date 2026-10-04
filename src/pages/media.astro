@@ -19,9 +19,10 @@ import { mediaCoverage } from '../data/credibility';
       </div>
       <ol class="press-list">
         {mediaCoverage.map((item) => (
-          <li>
-            <div class="press-meta"><span>{item.outlet}</span><span>{item.date}</span></div>
-            <div class="press-copy"><h2><a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}<span class="external-arrow" aria-hidden="true">↗</span></a></h2><p>{item.context}</p></div>
+          <li class:list={{ 'press-with-image': Boolean(item.image) }}>
+            {item.image && <a class="press-visual" href={item.href} target="_blank" rel="noopener noreferrer" aria-label={`Read ${item.title} at ${item.outlet}`}><img src={item.image} width="180" height="140" alt="" loading="lazy" decoding="async" /></a>}
+            <div class="press-story"><div class="press-meta"><span>{item.outlet}</span><span>{item.date}</span></div>
+            <div class="press-copy"><h2><a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}<span class="external-arrow" aria-hidden="true">↗</span></a></h2><p>{item.context}</p></div></div>
           </li>
         ))}
       </ol>

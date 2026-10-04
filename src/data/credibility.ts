@@ -1,12 +1,15 @@
 // Curated from the media and Members & Supporters sections on the former
 // WordPress homepage. Review this list with UnPoison before claiming that an
 // organisation is a current supporter or using its logo.
-export const mediaCoverage = [
+type MediaItem = { outlet: string; date: string; title: string; context: string; href: string; image?: string };
+
+export const mediaCoverage: MediaItem[] = [
   {
     outlet: 'Mail & Guardian',
     date: '15 May 2026',
     title: 'Agriculture minister bans toxic pesticide tied to Soweto child deaths',
     context: 'Reporting quoting UnPoison’s network coordinator, Anna Shevel.',
+    image: '/images/media/terbufos-ban-2026.webp',
     href: 'https://mg.co.za/the-green-guardian/2026-05-15-agriculture-minister-bans-toxic-pesticide-tied-to-soweto-child-deaths/',
   },
   {
@@ -14,6 +17,7 @@ export const mediaCoverage = [
     date: '23 January 2026',
     title: 'SA moves to ban deadly pesticide',
     context: 'Reporting on the proposed terbufos ban, with comment from UnPoison.',
+    image: '/images/media/terbufos-proposal-2026.webp',
     href: 'https://mg.co.za/the-green-guardian/2026-01-22-sa-moves-to-ban-deadly-pesticide/',
   },
   {
@@ -40,16 +44,16 @@ export const mediaCoverage = [
 ];
 
 export const listedSupporters = [
-  { name: 'Abalimi Bezekhaya', href: 'https://abalimibezekhaya.org.za/' },
-  { name: 'Biowatch South Africa', href: 'https://biowatch.org.za/' },
-  { name: 'Earthlore Foundation', href: 'https://earthlorefoundation.org/' },
-  { name: 'Envirochild', href: 'https://envirochild.org/' },
-  { name: 'Goedgedacht Trust', href: 'https://www.goedgedacht.org/' },
-  { name: 'groundWork', href: 'https://www.groundwork.org.za/' },
-  { name: 'Heinrich Böll Foundation Southern Africa', href: 'https://za.boell.org/en' },
-  { name: 'Noordhoek Environmental Action Group', href: 'https://neag.org.za/' },
-  { name: 'Project Biome', href: 'https://www.projectbiome.org/' },
-  { name: 'Southern Africa Food Lab', href: 'https://www.southernafricafoodlab.org/' },
-  { name: 'Surplus People Project', href: 'https://spp.org.za/' },
-  { name: 'WaterCAN', href: 'https://watercan.org.za/' },
+  { name: 'Abalimi Bezekhaya', href: 'https://abalimibezekhaya.org.za/', logo: '/images/supporters/abalimi.png' },
+  { name: 'Biowatch South Africa', href: 'https://biowatch.org.za/', logo: '/images/supporters/biowatch.png' },
+  { name: 'Earthlore Foundation', href: 'https://earthlorefoundation.org/', logo: '/images/supporters/earthlore.png' },
+  { name: 'Envirochild', href: 'https://envirochild.org/', logo: '/images/supporters/envirochild.jpg' },
+  { name: 'Goedgedacht Trust', href: 'https://www.goedgedacht.org/', logo: '/images/supporters/goedgedacht.png' },
+  { name: 'groundWork', href: 'https://www.groundwork.org.za/', logo: '/images/supporters/groundwork.jpg' },
+  { name: 'Heinrich Böll Foundation Southern Africa', href: 'https://za.boell.org/en', logo: '/images/supporters/heinrich-boell.png' },
+  { name: 'Noordhoek Environmental Action Group', href: 'https://neag.org.za/', logo: '/images/supporters/neag.jpg' },
+  { name: 'Project Biome', href: 'https://www.projectbiome.org/', logo: '/images/supporters/project-biome.png' },
+  { name: 'Southern Africa Food Lab', href: 'https://www.southernafricafoodlab.org/', logo: '/images/supporters/southern-africa-food-lab.png' },
+  { name: 'Surplus People Project', href: 'https://spp.org.za/', logo: '/images/supporters/surplus-people-project.jpg' },
+  { name: 'WaterCAN', href: 'https://watercan.org.za/', logo: '/images/supporters/watercan.png' },
 ];

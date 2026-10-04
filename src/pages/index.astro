@@ -113,7 +113,11 @@ const pesticideFigures = [
           <div class="home-credibility-column-head"><h3>In the media</h3><a class="line-link" href="/media/">See selected coverage <span aria-hidden="true">→</span></a></div>
           <ol class="home-media-list">
             {mediaCoverage.slice(0, 3).map((item) => (
-              <li><span>{item.outlet} · {item.date}</span><a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}<span aria-hidden="true">↗</span></a></li>
+              <li><a href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.image && <span class="home-media-visual"><img src={item.image} width="112" height="92" alt="" loading="lazy" decoding="async" /></span>}
+                <span class="home-media-copy"><span>{item.outlet} · {item.date}</span><strong>{item.title}</strong></span>
+                <span class="home-media-arrow" aria-hidden="true">↗</span>
+              </a></li>
             ))}
           </ol>
         </div>
@@ -121,7 +125,7 @@ const pesticideFigures = [
           <div class="home-credibility-column-head"><h3>Members & supporters</h3><a class="line-link" href="/supporters/">See the list <span aria-hidden="true">→</span></a></div>
           <p class="home-supporter-note">Organisations named on our previous website. Current affiliations are being checked.</p>
           <ul class="home-supporter-list">
-            {listedSupporters.slice(0, 8).map((item) => <li><a href={item.href} target="_blank" rel="noopener noreferrer">{item.name}<span aria-hidden="true">↗</span></a></li>)}
+            {listedSupporters.slice(0, 8).map((item) => <li><a href={item.href} target="_blank" rel="noopener noreferrer"><img src={item.logo} width="160" height="80" alt="" loading="lazy" decoding="async" /><span>{item.name}</span></a></li>)}
           </ul>
         </div>
       </div>
