@@ -118,14 +118,10 @@
   .skip-link { position: fixed; top: 0.5rem; left: 0.5rem; z-index: 600; transform: translateY(-160%); padding: 0.65rem 0.9rem; background: var(--yellow-500); font-weight: 700; }
   .skip-link:focus { transform: translateY(0); }
   .site-header { position: relative; z-index: 200; border-bottom: 1px solid var(--paper-200); background: var(--paper-50); }
-  .site-header-home { position: absolute; inset: 0 0 auto; border-bottom-color: oklch(94% 0.01 192 / 0.2); color: var(--paper-50); background: transparent; }
+  .site-header-home { position: absolute; inset: 0 0 auto; color: var(--ink-950); background: var(--paper-50); }
   .header-inner { min-height: 5.25rem; display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); }
-  .brand { display: inline-grid; grid-template-columns: 2.7rem auto; gap: 0.65rem; align-items: center; text-decoration: none; text-transform: uppercase; }
-  .brand-mark { width: 2.7rem; height: 2.7rem; object-fit: contain; }
-  .brand-type { display: grid; gap: 0.27rem; }
-  .brand-name { font-family: var(--font-display); font-size: 1.13rem; font-weight: 500; line-height: 1; letter-spacing: 0.08em; }
-  .brand-line { font-size: 0.72rem; font-weight: 650; letter-spacing: 0.22em; line-height: 1; color: var(--ink-650); }
-  .site-header-home .brand-line { color: var(--paper-100); }
+  .brand { display: inline-flex; align-items: center; text-decoration: none; }
+  .brand-image { width: clamp(10.5rem, 12vw, 12rem); height: auto; }
   .desktop-nav { display: none; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
   .desktop-nav > a { display: inline-flex; min-height: 2.75rem; align-items: center; font-size: 0.79rem; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
   .desktop-nav > a[aria-current='page'] { box-shadow: inset 0 -1px currentColor; }
