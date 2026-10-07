@@ -13,3 +13,5 @@ featured: true
 UnPoison maintains South Africa's only public database of highly hazardous pesticides, comparing registered products and active ingredients with international hazard criteria and bans.
 
 The database is intended to make regulatory information easier for civil society, researchers, policymakers and affected communities to use.
+
+**Related documents:** [UnPoison's February 2025 media release and analysis](/documents/hhp-database-2025-media-release.pdf) · [the first public HHP list, published in 2023](/resources/hhp-database-2023/).

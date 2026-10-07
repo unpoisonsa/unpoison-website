@@ -8,6 +8,10 @@ Phase-one update, 2026-10-01: the candidate site now has a Contact page, 14 dire
 
 Credibility update, 2026-10-04: the homepage now links to a curated `/media/` listing of five publisher-verified pieces and a `/supporters/` selection of 12 organisations carried over from the WordPress homepage. The EWN item is labelled as UnPoison-authored commentary. Current supporter status and permission to imply endorsement have **not** been verified; the public page says so. The remaining media and supporter records are still open in the ledger.
 
+Animals update, 2026-10-06: `/animals/` has a **local-only draft** and its linked three-page wildlife rehabilitation PDF has been copied byte-for-byte into `public/documents/`. Legacy redirects are drafted but **not deployed**. The draft now retains the campaign sign-up, owl-poisoning short, detailed prevention topics and all three original FAQ questions. The original homeopathic dosing/procedure is held on WordPress for clinical review rather than repeated as public treatment guidance. Anna must verify campaign ownership, veterinary/emergency wording and the PDF's contact details before cutover. See [`animals-source-preservation.md`](./animals-source-preservation.md) and [`content-gap-review-2026-10-06.md`](./content-gap-review-2026-10-06.md).
+
+Content-gap update, 2026-10-06: the **local-only** city campaign now includes the suburb-status map still, direct interactive map link, poll/Champs handoffs, City complaint route and a focused FAQ. The 2020 spray-drift article is now a resource with its full report and executive summary; the 2021 uploads are hash-identical duplicates. Five additional resource records and seven other original files have been added from the historic public collection, along with exact legacy redirect drafts. The document library, incident intake and recurring donation journeys are still incomplete. See [`content-gap-review-2026-10-06.md`](./content-gap-review-2026-10-06.md).
+
 ## Purpose
 
 This is the working content-parity ledger for the WordPress-to-Astro migration. Every discovered public item must end in one of these states before cutover:
@@ -25,14 +29,14 @@ The public WordPress site remains the source of truth until every P0/P1 row has 
 
 | Kind | Rows | Present in prototype now | Main gap |
 | --- | ---: | ---: | --- |
-| WordPress pages | 14 | Phase-one routes and Contact represented | Animals and substantial sections of Home/Pesticide-Free City still need parity review. |
-| WordPress posts | 1 | 0 | Spray-drift article and its relationship to the report are absent. |
-| Documents | 44 | 5 resource records; 7 PDFs copied locally | 39 document records still need migration/review. |
-| Images | 170 | 4 source images copied | 166 images need usage, rights, duplicate and quality review. |
+| WordPress pages | 14 | Phase-one routes plus Animals and expanded City campaign drafts | Incident intake and several content/owner checks remain. |
+| WordPress posts | 1 | 1 resource page drafted locally | Dated URL redirect needs preview verification after authorised deployment. |
+| Documents | 44 | 10 resource records; 17 PDFs copied locally | Remaining documents and attachment URLs need migration/review. |
+| Images | 170 | Selected source images and a dated Datawrapper map still copied | Usage, rights, duplicate and quality review remains for most library images. |
 | YouTube videos | 14 | 14 direct links with preview stills | Metadata/typed records and click-to-load players remain phase-two work. |
 | Media coverage links | 26 | 5 curated items | Remaining links need title, relevance and destination review. |
 | Partner/supporter references | 41 | 12 homepage organisations named | Current relationships, remaining names and permissions need verification. |
-| External forms | 3 | 1 campaign handoff represented | Campaign poll/champion destinations require verification. |
+| External forms | 3 | Poll and Champs handoffs verified as opening | Submission ownership/destinations still require Anna's confirmation. |
 | External documents | 7 | 3 campaign links represented | Third-party source documents need stable titles and link checks. |
 | Internal references requiring review | 29 | — | Attachment pages, legacy aliases and other routes need redirect decisions. |
 | Forms/services/integrations | 9 | 2 temporary bridges | Ownership/configuration cannot be recovered fully from the public site. |
@@ -53,12 +57,12 @@ The CSV contains **367 trackable rows**. It is deliberately more granular than t
 | Current URL | Proposed decision | Destination | Priority | Status |
 | --- | --- | --- | --- | --- |
 | `/` | Rewrite and consolidate | `/` | P0 | In progress |
-| `/our-work/` | Migrate into typed resource library | `/resources/` | P0 | In progress; only five records exist |
-| `/poison-free-city/` | Migrate full campaign and redirect | `/campaigns/pesticide-free-cape-town/` | P0 | Partial |
+| `/our-work/` | Migrate into typed resource library | `/resources/` | P0 | In progress; ten records exist, many documents remain |
+| `/poison-free-city/` | Migrate full campaign and redirect | `/campaigns/pesticide-free-cape-town/` | P0 | Local page expanded; data/owner review pending |
 | `/submit-a-story/` | Preserve bridge, then replace safely | `/report-an-incident/` | P0 | Blocked on workflow/privacy decisions |
 | `/monthly-donations/` | Preserve bridge, then consolidate | `/donate/` | P0 | Blocked on payment verification |
 | `/contact/` | Migrate | `/contact/` | P0 | Phase-one email route built; recipient confirmation pending |
-| `/animals/` | Migrate and restructure | `/animals/` | P1 | Not started |
+| `/animals/` | Migrate and restructure | `/animals/` | P1 | Local draft; clinical and contact review pending |
 | `/debit-order/` | Verify, then consolidate or retire | `/donate/` | P1 | Blocked on ThrivePay access |
 | `/stories/` | Review and archive/migrate approved stories | `/stories/` | P2 | Not started |
 | `/education-tools/` | Review items and consolidate retained tools | `/resources/` | P2 | Not started |
@@ -67,7 +71,7 @@ The CSV contains **367 trackable rows**. It is deliberately more granular than t
 | `/demo/` | Retire | none/410 | P3 | Candidate retirement |
 | `/coming-soon/` | Retire | none/410 | P3 | Candidate retirement |
 
-The dated spray-drift post should become a stable resource/article at `/resources/pesticide-spray-drift-in-south-africa/`, with a redirect from its existing dated URL.
+The dated spray-drift post now has a local resource/article at `/resources/pesticide-spray-drift-in-south-africa/`, with an undeployed redirect from its dated URL and exact PDF copies.
 
 ## Video ledger
 
@@ -109,13 +113,13 @@ Each retained document needs:
 - related press release, article or later version;
 - accessible download text.
 
-Five obvious duplicate-title groups require file-hash and content comparison before choosing a canonical file:
+Five obvious duplicate-title groups required file-hash and content comparison before choosing a canonical file:
 
-1. `Is this herbicide spraying legal?` — media IDs 1462 and 1463.
-2. `Request For Immediate Suspension and Review of the Derogation Process` — IDs 1255 and 1259.
+1. `Is this herbicide spraying legal?` — media IDs 1462 and 1463; **confirmed identical**.
+2. `Request For Immediate Suspension and Review of the Derogation Process` — IDs 1255 and 1259; **confirmed identical**.
 3. `Submission on Draft Regulations for Hazardous Pesticides International Trade` — IDs 884 and 887.
-4. `Pesticide spray drift in South Africa — Executive Summary` — IDs 131 and 739.
-5. `Pesticide spray drift in South Africa` — IDs 132 and 738.
+4. `Pesticide spray drift in South Africa — Executive Summary` — IDs 131 and 739; **confirmed identical**.
+5. `Pesticide spray drift in South Africa` — IDs 132 and 738; **confirmed identical**.
 
 Duplicate filenames or titles do not prove identical content. No file should be deleted until originals have been hashed and compared.
 

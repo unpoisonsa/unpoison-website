@@ -13,8 +13,128 @@
   status = 301
 
 [[redirects]]
+  from = "/2020/12/05/pesticide-spray-drift-in-south-africa-calling-for-legislation-on-buffer-zones-and-other-measures-to-protect-our-people-and-environment/"
+  to = "/resources/pesticide-spray-drift-in-south-africa/"
+  status = 301
+
+[[redirects]]
+  from = "/pesticide-spray-drift-in-south-africa-executive-summary-web-2/"
+  to = "/documents/pesticide-spray-drift-south-africa-summary-2020.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/pesticide-spray-drift-in-south-africa-2/"
+  to = "/documents/pesticide-spray-drift-south-africa-full-2020.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2020/12/Pesticide-spray-drift-in-South-Africa-Executive-Summary-web.pdf"
+  to = "/documents/pesticide-spray-drift-south-africa-summary-2020.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2020/12/Pesticide-spray-drift-in-South-Africa.pdf"
+  to = "/documents/pesticide-spray-drift-south-africa-full-2020.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2021/08/Pesticide-spray-drift-in-South-Africa-Executive-Summary-web.pdf"
+  to = "/documents/pesticide-spray-drift-south-africa-summary-2020.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2021/08/Pesticide-spray-drift-in-South-Africa.pdf"
+  to = "/documents/pesticide-spray-drift-south-africa-full-2020.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/sa-list-of-highly-hazardous-pesticides-using-jmpm-criteria-whofao-ban-comparisson/"
+  to = "/resources/hhp-database-2023/"
+  status = 301
+
+[[redirects]]
+  from = "/corrected-press-release-unpoison-publishes-south-africas-list-of-highly-hazardous-pesticides-23082023/"
+  to = "/documents/hhp-database-2023-press-release.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/media-release-unpoisons-2025-update-of-south-africas-highly-hazardous-pesticide-database-and-analysis/"
+  to = "/documents/hhp-database-2025-media-release.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/comment-on-update-of-act-36-10-nov-2024-web/"
+  to = "/resources/act-36-regulations-comment-2024/"
+  status = 301
+
+[[redirects]]
+  from = "/request-for-immediate-suspension-and-review-of-the-derogation-process-unpoison-03032025/"
+  to = "/resources/derogation-process-suspension-2025/"
+  status = 301
+
+[[redirects]]
+  from = "/colloquium_prog_final_20_aug_-2025-1/"
+  to = "/documents/pesticide-policy-colloquium-programme-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/press-release_-historic-pesticide-policy-framework-colloquium-aug-2025-1/"
+  to = "/documents/pesticide-policy-colloquium-press-release-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2023/08/SA-list-of-Highly-Hazardous-Pesticides-using-JMPM-criteria-WHOFAO-ban-comparisson.pdf"
+  to = "/documents/hhp-database-2023.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2023/08/Corrected-Press-Release-UnPoison-Publishes-South-Africas-List-of-Highly-Hazardous-Pesticides-23082023.pdf"
+  to = "/documents/hhp-database-2023-press-release.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/02/Media-Release-UnPoisons-2025-Update-of-South-Africas-Highly-Hazardous-Pesticide-Database-and-Analysis.pdf"
+  to = "/documents/hhp-database-2025-media-release.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/03/Request-For-Immediate-Suspension-and-Review-of-the-Derogation-Process-UnPoison-03032025.pdf"
+  to = "/documents/derogation-process-suspension-request-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/03/Request-For-Immediate-Suspension-and-Review-of-the-Derogation-Process-UnPoison-03032025-1.pdf"
+  to = "/documents/derogation-process-suspension-request-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2024/11/Comment-on-Update-of-Act-36-10-Nov-2024-web.pdf"
+  to = "/documents/act-36-regulations-comment-2024.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/08/Colloquium_PROG_FINAL_20_Aug_-2025-1.pdf"
+  to = "/documents/pesticide-policy-colloquium-programme-2025.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/08/Press-Release_-Historic-Pesticide-Policy-Framework-Colloquium-Aug-2025-1.pdf"
+  to = "/documents/pesticide-policy-colloquium-press-release-2025.pdf"
+  status = 301
+
+[[redirects]]
   from = "/education-tools/"
   to = "/resources/"
+  status = 301
+
+[[redirects]]
+  from = "/wildlife_and_raptor_rehab_centres_south_africa/"
+  to = "/documents/wildlife-and-raptor-rehabilitation-centres-south-africa.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2026/01/Wildlife_and_Raptor_Rehab_Centres_South_Africa.pdf"
+  to = "/documents/wildlife-and-raptor-rehabilitation-centres-south-africa.pdf"
   status = 301
 
 [[redirects]]
@@ -74,6 +194,11 @@
 
 [[redirects]]
   from = "/wp-content/uploads/2025/10/Is-this-herbicide-spraying-legal-1.pdf"
+  to = "/documents/is-this-herbicide-spraying-legal.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/uploads/2025/10/Is-this-herbicide-spraying-legal.pdf"
   to = "/documents/is-this-herbicide-spraying-legal.pdf"
   status = 301
 

@@ -277,6 +277,31 @@
   .about-method-band { background: var(--white); }
   .about-organisation-band { background: var(--warm-100); }
   .about-record-band { background: var(--paper-100); }
+  .animals-response-band { color: var(--paper-50); background: var(--green-900); }
+  .animals-response-grid { display: grid; gap: var(--space-xl); }
+  .animals-response-grid .eyebrow { color: var(--yellow-500); }
+  .animals-response-grid h2 { max-width: 18ch; margin-top: var(--space-md); }
+  .animals-response-grid > div:first-child p:not(.eyebrow) { max-width: 63ch; margin-top: var(--space-md); color: var(--green-200); }
+  .animals-response-links { display: grid; align-content: start; gap: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--green-700); }
+  .animals-response-links a { color: var(--paper-50); font-weight: 700; }
+  .animals-response-links .animals-directory-note { max-width: 42ch; color: var(--green-200); font-size: var(--text-sm); }
+  .animals-facts-grid { display: grid; gap: var(--space-xl); }
+  .animals-facts-grid h2 { max-width: 16ch; margin-top: var(--space-md); }
+  .animals-pathway-band { background: var(--paper-100); }
+  .animals-pathway-list { padding-left: 1.35rem; }
+  .animals-pathway-list li + li { margin-top: var(--space-sm); }
+  .animals-film-band { background: var(--warm-100); }
+  .animals-film-band .video-feature-copy > p:not(.eyebrow) { color: var(--ink-800); }
+  .animals-page-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin-top: var(--space-lg); }
+  .animals-page-nav a { color: var(--green-800); font-size: var(--text-sm); font-weight: 650; text-underline-offset: 0.25em; }
+  .animals-campaign-band { background: var(--warm-100); }
+  .animals-campaign-band .button { width: fit-content; }
+  .animals-faq .notice { font-size: var(--text-sm); }
+  .animals-faq details { border-top: 1px solid var(--paper-200); }
+  .animals-faq details:last-of-type { border-bottom: 1px solid var(--paper-200); }
+  .animals-faq summary { padding-block: var(--space-md); color: var(--green-800); font-weight: 700; cursor: pointer; }
+  .animals-faq details > div { padding-bottom: var(--space-lg); }
+  .animals-faq details > div > * + * { margin-top: var(--space-md); }
   .method-list { padding: 0; border-top: 1px solid var(--paper-200); list-style: none; }
   .method-list li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-md); padding-block: var(--space-lg); border-bottom: 1px solid var(--paper-200); }
   .method-number { padding-top: 0.1rem; color: var(--green-700); font-family: var(--font-display); font-size: 1.3rem; }
@@ -291,6 +316,15 @@
   .campaign-video-poster-content strong { display: block; font-family: var(--font-display); font-size: var(--text-lg); font-weight: 520; line-height: 1.2; }
   .campaign-video-play { display: grid; flex: 0 0 3.5rem; width: 3.5rem; height: 3.5rem; place-items: center; padding-left: 0.2rem; color: var(--ink-950); background: var(--yellow-500); font-size: 1.2rem; }
   .campaign-video .fine-print { max-width: 58ch; margin-top: var(--space-sm); }
+  .campaign-map-band { background: var(--paper-100); }
+  .campaign-map-band .section-heading > p { max-width: 42ch; }
+  .campaign-map-preview { display: block; max-width: 43rem; margin-inline: auto; background: var(--white); }
+  .campaign-map-preview img { display: block; width: 100%; height: auto; }
+  .campaign-map-band .fine-print { max-width: 85ch; margin-top: var(--space-md); }
+  .campaign-archive-link { margin-top: var(--space-lg); }
+  .campaign-join-band { background: var(--warm-100); }
+  .campaign-info-grid { display: grid; gap: var(--space-xl); }
+  .campaign-info-grid h2 { max-width: 16ch; margin-top: var(--space-md); }
   .callout { padding: var(--space-xl); background: var(--green-900); color: var(--paper-50); }
   .callout h2 { max-width: 11ch; }
   .callout p { max-width: 54ch; margin-top: var(--space-md); color: var(--green-200); }
@@ -467,6 +501,9 @@
   .home-entry-grid { grid-template-columns: minmax(17rem, 0.8fr) minmax(0, 1.2fr); }
   .home-credibility-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2xl); }
   .press-layout, .supporters-layout, .about-credibility { grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr); }
+  .animals-response-grid { grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.6fr); }
+  .animals-facts-grid { grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr); }
+  .campaign-info-grid { grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr); }
   .press-list li.press-with-image { grid-template-columns: 10rem minmax(0, 1fr); align-items: start; }
   .press-visual { width: 10rem; }
 }

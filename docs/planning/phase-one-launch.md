@@ -1,6 +1,6 @@
 # Phase-one launch: DNS and Google for Nonprofits
 
-Status: preview-ready; **DNS has not been switched**. The WordPress site remains live at `unpoison.org`. The Netlify project serves the candidate site at `https://unpoison.netlify.app/`.
+Status: preview-ready; **DNS has not been switched**. The WordPress site remains live at `unpoison.org`. The Netlify project serves the candidate site at `https://unpoison.netlify.app/`. On 2026-10-07 Jen requested a temporary Netlify cutover for Google review, followed by a return to WordPress while the complete replacement is developed. Do not treat that return as automatic until the specific Google product's ongoing website requirements and the WordPress site's condition are checked.
 
 ## Already prepared
 
@@ -27,7 +27,15 @@ Keep existing nameservers and all mail-related records. In the current external 
 
 Those are the exact targets shown in this project's Netlify domain settings on 1 October 2026. Before changing records, lower their TTL if practical and record the current values for rollback. At the time of preparation, the apex resolves to WordPress at `197.221.14.16`; the zone also has Google MX and an SPF TXT record. **Do not replace the nameservers or delete MX/TXT records.**
 
-When both domains verify in Netlify, wait for a valid HTTPS certificate, then test `https://unpoison.org/` and the `www` redirect. Only once the new site is serving correctly, set the Netlify production environment variable `INDEX_SITE=true` and trigger a fresh production deploy. Verify that the generated canonical URLs and sitemap use `https://unpoison.org`, `robots.txt` allows crawling, and the `noindex` meta tag has disappeared. Deploy previews should remain non-indexable.
+For the temporary launch, set `INDEX_SITE=true` in Netlify's **production** deploy context (and `false` for previews) immediately before the single release build. The release can be checked at `unpoison.netlify.app` while DNS still points to WordPress; its canonical and sitemap will already target `https://unpoison.org`. Then change the DNS records. When both domains verify in Netlify, wait for a valid HTTPS certificate and test `https://unpoison.org/` and the `www` redirect. Confirm the new site has the `https://unpoison.org` canonical and sitemap, `robots.txt` allows crawling, and no `noindex` meta tag remains. Deploy previews should remain non-indexable.
+
+## Temporary cutover and return to WordPress
+
+- Before editing DNS, export or record the **entire** xneelo zone, not only the web records. On 2026-10-07 the observed `@` and `www` A records both resolved to the WordPress host `197.221.14.16`; recheck the authoritative zone and TTL in xneelo before relying on these values. Keep the WordPress hosting, files, database, and mail service unchanged during the temporary cutover.
+- For the Netlify interval, change only `@` and `www` as above. Do not switch nameservers or modify MX, SPF, DKIM, DMARC, or Google verification TXT records. Verify the public site, donation handoff, contact route, redirects, and both HTTPS hostnames after propagation.
+- Record which Google decision is awaited and its application/reference status. Google for Nonprofits account verification, Google Workspace for Nonprofits activation, and Ad Grants website approval are distinct; a decision on one does not establish approval of the others.
+- Before returning to WordPress, confirm that the restored site still meets the requirements of the approved Google product, particularly identity, mission, contact, HTTPS, and functioning visitor journeys. If Ad Grants is active, a website that no longer meets its policy can risk suspension. Preserve the approved domain and do not move ads to the Netlify preview hostname.
+- To roll back, restore the exact pre-cutover xneelo web records from the zone snapshot (expected `@` and `www` A records to `197.221.14.16`, subject to that snapshot). Then verify WordPress at both hostnames over HTTPS, check legacy pages and mail, and return Netlify to its non-indexable preview configuration when it is no longer the production site. Do not remove the Netlify project or its content; it remains the development preview for the full replacement.
 
 ## Launch smoke test
 
